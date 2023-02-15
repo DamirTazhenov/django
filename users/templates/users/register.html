@@ -2,95 +2,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>Store - Регистрация</title>
-    <link href="{% static 'vendor/css/auth.css' %}" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
-            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'vendor/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'vendor/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/css/style_reg.css' %}">
 </head>
-<body class="bg-primary">
-<div id="layoutAuthentication">
-    <div id="layoutAuthentication_content">
-        <main>
+<body style="background-image: url({% static 'vendor/images/bg.jpg' %})">
+
+    <div class="main">
+
+        <section class="signup">
+
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert"
-                             style="margin-top: 50px;">
-                            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Создать аккаунт</h3>
-                            </div>
-                            <div class="card-body">
-                                <form action="{% url 'users:register' %}" method="post">
-                                    {% csrf_token %}
-                                    <div class="form-row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="{{ form.first_name.id_for_label }}">Имя</label>
+                <div class="signup-content">
+                    <form action="{% url 'users:register' %}" method="POST" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Create account</h2>
+                        <div class="form-group">
+                            <label class="" for="{{ form.first_name.id_for_label }}">Имя</label>
                                                 {{ form.first_name }}
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="{{ form.last_name.id_for_label }}">Фамилия</label>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" for="{{ form.last_name.id_for_label }}">Фамилия</label>
                                                 {{ form.last_name }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="{{ form.username.id_for_label }}">Имя пользователя</label>
+                        </div>
+                        <div class="form-group">
+                             <label class="small mb-1" for="{{ form.username.id_for_label }}">Имя пользователя</label>
                                             {{ form.username }}
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="{{ form.email.id_for_label }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" for="{{ form.email.id_for_label }}">
                                                 Адрес электронной почты
                                             </label>
-                                            {{ form.email }}
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
+                        </div>
+                        <div class="form-group">
                                                 <label class="small mb-1" for="{{ form.password1.id_for_label }}">Пароль</label>
                                                 {{ form.password1 }}
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
+                        <div class="form-group">
                                                 <label class="small mb-1" for="{{ form.password2.id_for_label }}">Подтверждение
                                                     пароля</label>
                                                 {{ form.password2 }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mt-4 mb-0">
-                                        <input class="btn btn-primary btn-block" type="submit" value="Создать аккаунт">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="card-footer text-center">
-                                <div class="small"><a href="{% url 'users:login' %}">Уже есть аккаунт? Авторизоваться</a></div>
-                            </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                    </p>
                 </div>
             </div>
-        </main>
+        </section>
+
     </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-<script src="{%static 'vendor/js/auth-admin.js' %}"></script>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min' %}"></script>
+    <script src="{% static 'vendor/js/main.js' %}"></script>
 </body>
 </html>
