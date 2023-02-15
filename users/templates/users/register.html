@@ -16,56 +16,56 @@
 </head>
 <body style="background-image: url({% static 'vendor/images/bg.jpg' %})">
 
-    <div class="main">
+<div class="main">
 
-        <section class="signup">
+    <section class="signup">
 
-            <div class="container">
-                <div class="signup-content">
-                    <form action="{% url 'users:register' %}" method="POST" id="signup-form" class="signup-form">
-                        {% csrf_token %}
-                        <h2 class="form-title">Создание аккаунта</h2>
-                        <div class="form-group">
-                            <label class="" for="{{ form.first_name.id_for_label }}">Имя</label>
-                                                {{ form.first_name }}
+        <div class="container">
+            <div class="signup-content">
+                <form action="{% url 'users:register' %}" method="POST" id="signup-form" class="signup-form">
+                    {% csrf_token %}
+                    <h2 class="form-title">Создание аккаунта</h2>
+                    <div class="form-group">
+                        <label class="" for="{{ form.first_name.id_for_label }}">Имя</label>
+                        {{ form.first_name }}
 
-                        </div>
-                        <div class="form-group">
-                            <label class="small mb-1" for="{{ form.last_name.id_for_label }}">Фамилия</label>
-                                                {{ form.last_name }}
-                        </div>
-                        <div class="form-group">
-                             <label class="small mb-1" for="{{ form.username.id_for_label }}">Имя пользователя</label>
-                                            {{ form.username }}
-                        </div>
-                        <div class="form-group">
-                            <label class="small mb-1" for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
-                            {{ form.email }}
-                        </div>
-                        <div class="form-group">
-                                                <label class="small mb-1" for="{{ form.password1.id_for_label }}">Пароль</label>
-                                                {{ form.password1 }}
-                                            </div>
-                        <div class="form-group">
-                                                <label class="small mb-1" for="{{ form.password2.id_for_label }}">Подтверждение
-                                                    пароля</label>
-                                                {{ form.password2 }}
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Зарегистрироваться"/>
-                        </div>
-                    </form>
-                    <p class="loginhere">
-                        Уже есть аккаунт? <a href="{% url 'users:login' %}" class="loginhere-link">Залогинься тут!</a>
-                    </p>
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="{{ form.last_name.id_for_label }}">Фамилия</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="{{ form.username.id_for_label }}">Имя пользователя</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="{{ form.password1.id_for_label }}">Пароль</label>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="{{ form.password2.id_for_label }}">Подтверждение
+                            пароля</label>
+                        {{ form.password2 }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Зарегистрироваться"/>
+                    </div>
+                </form>
+                <p class="loginhere">
+                    Уже есть аккаунт? <a href="{% url 'users:login' %}" class="loginhere-link">Залогинься тут!</a>
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </div>
+</div>
 
-    <!-- JS -->
-    <script src="{% static 'vendor/jquery/jquery.min' %}"></script>
-    <script src="{% static 'vendor/js/main.js' %}"></script>
+<!-- JS -->
+<script src="{% static 'vendor/jquery/jquery.min' %}"></script>
+<script src="{% static 'vendor/js/main.js' %}"></script>
 </body>
 </html>
